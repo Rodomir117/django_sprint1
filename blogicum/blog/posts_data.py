@@ -1,9 +1,6 @@
-# from django.http import Http404
-from django.shortcuts import render
-
-#from .posts_data import posts
-
-posts = [
+"""Данные сообщений."""
+posts: dict = {
+    0:
     {
         'id': 0,
         'location': 'Остров отчаянья',
@@ -16,6 +13,7 @@ posts = [
                 полумёртвым на берег этого проклятого острова,
                 который назвал островом Отчаяния.''',
     },
+    1:
     {
         'id': 1,
         'location': 'Остров отчаянья',
@@ -32,6 +30,7 @@ posts = [
                 построить баркас, на котором и выбрались бы из этого
                 гиблого места.''',
     },
+    2:
     {
         'id': 2,
         'location': 'Остров отчаянья',
@@ -44,25 +43,4 @@ posts = [
                 Весь этот день я хлопотал  около вещей: укрывал и
                 укутывал их, чтобы не испортились от дождя.''',
     },
-]
-
-
-def index(request):
-    """Лента записей."""
-    template = 'blog/index.html'
-    context = {'post': posts}
-    return render(request, template, context)
-
-
-def post_detail(request, id):
-    """Список постов с кратким описанием."""
-    template = 'blog/detail.html'
-    context = {'post': posts[id]}
-    return render(request, template, context)
-
-
-def category_posts(request, category_slug):
-    """Список постов по категории."""
-    template = 'blog/category.html'
-    context = {'category': category_slug}
-    return render(request, template, context)
+}
