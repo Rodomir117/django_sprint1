@@ -153,11 +153,3 @@ html
 build_tests/
 yap_testing
 html/img/img/
-<<<<<<< HEAD
-=======
-
-# файлы которые не нужны в этом проекте
-admin.py
-models.py
-test.py
->>>>>>> 4a40f581c116413e1b49d82f0c2f99476baf098a
