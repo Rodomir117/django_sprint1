@@ -57,7 +57,7 @@ def post_detail(request, id):
     """Список постов с кратким описанием."""
     template = 'blog/detail.html'
     #try:
-    #  
+ 
     #except IndexError as err:
     #    raise Http404(f'Ошибка: {err}')
     context = {'post': posts[id]}    
