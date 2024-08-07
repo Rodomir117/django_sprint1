@@ -1,13 +1,11 @@
-from django.shortcuts import render
+from django.views.generic.base import TemplateView
 
 
-def about(request):
+class About(TemplateView):
     """О проекте."""
-    template = 'pages/about.html'
-    return render(request, template)
+    template_name = 'pages/about.html'
 
 
-def rules(request):
+class Rules(TemplateView):
     """Наши Правила."""
-    template = 'pages/rules.html'
-    return render(request, template)
+    template_name = 'pages/rules.html'
