@@ -51,7 +51,7 @@ posts_data = {post['id']: post for post in posts}
 def index(request):
     """Лента записей."""
     template = 'blog/index.html'
-    context = {'posts': posts[::-1]}
+    context = {'posts': reversed(posts)}  # posts[::-1]
     return render(request, template, context)
 
 
