@@ -45,22 +45,23 @@ posts = [
     },
 ]
 
+posts_data = {post['id']: post for post in posts}
+
 
 def index(request):
     """Лента записей."""
     template = 'blog/index.html'
-    context = {'post': posts}
+    context = {'posts': posts}  # .reverse
     return render(request, template, context)
 
 
 def post_detail(request, id):
-    """Список постов с кратким описанием."""
+    """Список постов с детальным описанием."""
     template = 'blog/detail.html'
-    #try:
- 
-    #except IndexError as err:
-    #    raise Http404(f'Ошибка: {err}')
-    context = {'post': posts[id]}    
+    try:
+        context = {'post': posts_data[id]}
+    except KeyError:
+        raise Http404(f'Страницы {id} не существует')
     return render(request, template, context)
 
 
