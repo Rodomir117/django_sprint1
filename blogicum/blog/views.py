@@ -24,7 +24,10 @@ def post_detail(request, id):
 
 
 def category_posts(request, category_slug):
-    """Список постов по категории."""
+    """Список постов по категориям."""
+    category_data = [
+        post for post in POSTS if post['category'] == category_slug]
     template = 'blog/category.html'
-    context = {'category': category_slug}
+    context = {'category': category_slug,
+               'posts': category_data[::-1]}
     return render(request, template, context)
